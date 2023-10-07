@@ -95,7 +95,6 @@ const RegisterForm: FC = () => {
     }
   }
 
-  // Everytime file changes this function gets called
   useEffect(() => {
     if (file) {
       const reader = new FileReader()
