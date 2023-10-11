@@ -19,6 +19,7 @@ const Topbar: FC = () => {
 
   const signout = async () => {
     const response = await API.signout()
+    console.log('Topbar response: ', response)
     if (response.data?.statusCode === StatusCode.BAD_REQUEST) {
       setApiError(response.data.message)
       setShowError(true)
