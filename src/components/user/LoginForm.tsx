@@ -21,6 +21,7 @@ const LoginForm: FC = () => {
 
   const onSubmit = handleSubmit(async (data: LoginUserFields) => {
     const response = await API.login(data)
+    console.log('Login response: ', response)
     if (response.data?.statusCode === StatusCode.BAD_REQUEST) {
       setApiError(response.data.message)
       setShowError(true)

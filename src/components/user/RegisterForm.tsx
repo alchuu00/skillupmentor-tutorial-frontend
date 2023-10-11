@@ -30,6 +30,7 @@ const RegisterForm: FC = () => {
   const onSubmit = handleSubmit(async (data: RegisterUserFields) => {
     if (!file) return
     const response = await API.register(data)
+    console.log('Register response: ', response)
     if (response.data?.statusCode === StatusCode.BAD_REQUEST) {
       setApiError(response.data.message)
       setShowError(true)
